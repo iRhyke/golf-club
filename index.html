@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOLF SALON GREEN | 24時間完全個室シミュレーションゴルフ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .plan-card {
+            transition: all 0.3s ease;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+        }
+
+        .premium-border {
+            border: 2px solid #15803d;
+            position: relative;
+        }
+
+        .recommended-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #15803d;
+            color: white;
+            padding: 2px 20px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-green-700 tracking-tighter">GOLF STUDIO</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 text-sm font-bold">
+                    <a href="#features" class="hover:text-green-600">特徴</a>
+                    <a href="#pricing" class="hover:text-green-600">プラン</a>
+                    <a href="#facility" class="hover:text-green-600">施設</a>
+                    <a href="#access" class="hover:text-green-600">アクセス</a>
+                    <a href="#" class="bg-green-700 text-white px-6 py-2 rounded-full hover:bg-green-800 transition">体験予約</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 space-y-4 shadow-lg">
+            <a href="#features" class="block py-2 text-gray-700 font-bold">特徴</a>
+            <a href="#pricing" class="block py-2 text-gray-700 font-bold">プラン</a>
+            <a href="#facility" class="block py-2 text-gray-700 font-bold">施設紹介</a>
+            <a href="#access" class="block py-2 text-gray-700 font-bold">アクセス</a>
+            <a href="#" class="block bg-green-700 text-white text-center py-3 rounded-md font-bold">体験予約はこちら</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient h-[90vh] flex items-center justify-center text-center text-white px-4">
+        <div>
+            <div class="inline-block border border-green-400 px-4 py-1 rounded mb-6 text-sm md:text-base tracking-widest text-green-400">
+                24時間営業・完全個室・少人数定員制
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                待ち時間なし。<br>
+                あなただけの練習空間。
+            </h1>
+            <p class="text-base md:text-lg mb-10 max-w-2xl mx-auto text-gray-200">
+                最新シミュレーターによる科学的な上達。会員数を限定（定員60名様）しているため、<br class="hidden md:inline">予約の取りやすさと集中できる環境を約束します。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#pricing" class="bg-white text-green-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition shadow-xl">プラン詳細を見る</a>
+                <a href="#" class="bg-green-700 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-green-800 transition shadow-xl">500円体験予約</a>
+            </div>
+        </div>
+    </section>
+
+   <!-- Features -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">選ばれる3つの理由</h2>
+                <div class="w-16 h-1 bg-green-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="feature-card text-center p-6">
+                    <div class="bg-green-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-clock text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">24時間365日営業</h3>
+                    <p class="text-gray-600 leading-relaxed">早朝でも深夜でも、あなたのライフスタイルに合わせて。予約制なので待ち時間もありません。</p>
+                </div>
+                <div class="feature-card text-center p-6">
+                    <div class="bg-green-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-desktop text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">最新シミュレーター完備</h3>
+                    <p class="text-gray-600 leading-relaxed">世界150以上の名門コースを体験。スイング分析機能で上達をバックアップします。</p>
+                </div>
+                <div class="feature-card text-center p-6">
+                    <div class="bg-green-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-couch text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">手ぶらで通える快適空間</h3>
+                    <p class="text-gray-600 leading-relaxed">クラブ・シューズのレンタル無料。更衣室や休憩スペースも完備した清潔なスタジオです。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">料金プラン</h2>
+                <p class="text-gray-600">ライフスタイルに合わせて選べる5つのプラン</p>
+                <div class="w-16 h-1 bg-green-700 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Main Plans -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- オールタイム (Main) -->
+                <div class="plan-card bg-white rounded-2xl p-8 premium-border shadow-xl">
+                    <div class="recommended-badge">メインプラン</div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">オールタイム</h3>
+                        <p class="text-gray-500 text-sm">いつでも好きな時に練習したい方に</p>
+                        <div class="mt-4">
+                            <span class="text-5xl font-bold text-green-700">¥19,800</span>
+                            <span class="text-gray-500">/月(税込)</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-700 font-medium"><i class="fas fa-check-circle text-green-600 mr-3"></i>全日 24時間利用可能</li>
+                        <li class="flex items-center text-gray-700 font-medium"><i class="fas fa-check-circle text-green-600 mr-3"></i>同時予約数：1枠</li>
+                        <li class="flex items-center text-gray-700 font-medium"><i class="fas fa-check-circle text-green-600 mr-3"></i>月間の利用制限なし</li>
+                        <li class="flex items-center text-gray-700 font-medium"><i class="fas fa-check-circle text-green-600 mr-3"></i>レンタルクラブ・シューズ無料</li>
+                    </ul>
+                    <a href="#" class="block w-full bg-green-700 text-white text-center py-4 rounded-xl font-bold hover:bg-green-800 transition">このプランで入会する</a>
+                </div>
+
+                <!-- オールタイムゴールド -->
+                <div class="plan-card bg-gray-900 text-white rounded-2xl p-8 shadow-xl">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">オールタイムゴールド</h3>
+                        <p class="text-gray-400 text-sm">先まで予約を確保したい上級者向け</p>
+                        <div class="mt-4">
+                            <span class="text-5xl font-bold text-green-400">¥24,800</span>
+                            <span class="text-gray-400">/月(税込)</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-200 font-medium"><i class="fas fa-star text-yellow-400 mr-3"></i>全日 24時間利用可能</li>
+                        <li class="flex items-center text-gray-200 font-medium"><i class="fas fa-star text-yellow-400 mr-3"></i>同時予約数：<span class="text-yellow-400 font-bold ml-1">2枠</span></li>
+                        <li class="flex items-center text-gray-200 font-medium"><i class="fas fa-star text-yellow-400 mr-3"></i>月間の利用制限なし</li>
+                        <li class="flex items-center text-gray-200 font-medium"><i class="fas fa-star text-yellow-400 mr-3"></i>VIPロッカー利用優先権</li>
+                    </ul>
+                    <a href="#" class="block w-full bg-white text-gray-900 text-center py-4 rounded-xl font-bold hover:bg-gray-100 transition">このプランで入会する</a>
+                </div>
+            </div>
+
+            <!-- Sub Plans -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- ライト -->
+                <div class="plan-card bg-white rounded-xl p-6 shadow-md border border-gray-100">
+                    <h3 class="text-lg font-bold text-center border-b pb-4 mb-4">ライトプラン</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-3xl font-bold text-gray-800">¥12,980</span>
+                        <span class="text-gray-500 text-xs">/月(税込)</span>
+                    </div>
+                    <ul class="text-sm space-y-3 text-gray-600">
+                        <li class="flex justify-between"><span>利用時間</span><span class="font-bold">24時間全日</span></li>
+                        <li class="flex justify-between"><span>利用回数</span><span class="font-bold">月4回</span></li>
+                        <li class="flex justify-between"><span>同時予約</span><span class="font-bold">1枠</span></li>
+                    </ul>
+                </div>
+                <!-- 平日デイタイム -->
+                <div class="plan-card bg-white rounded-xl p-6 shadow-md border border-gray-100">
+                    <h3 class="text-lg font-bold text-center border-b pb-4 mb-4">平日デイタイム</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-3xl font-bold text-gray-800">¥9,980</span>
+                        <span class="text-gray-500 text-xs">/月(税込)</span>
+                    </div>
+                    <ul class="text-sm space-y-3 text-gray-600">
+                        <li class="flex justify-between"><span>利用時間</span><span class="font-bold">平日 10:00-17:00</span></li>
+                        <li class="flex justify-between"><span>利用回数</span><span class="font-bold">制限なし</span></li>
+                        <li class="flex justify-between"><span>同時予約</span><span class="font-bold">1枠</span></li>
+                    </ul>
+                </div>
+                <!-- ナイトタイム -->
+                <div class="plan-card bg-white rounded-xl p-6 shadow-md border border-gray-100">
+                    <h3 class="text-lg font-bold text-center border-b pb-4 mb-4">ナイトタイム</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-3xl font-bold text-gray-800">¥8,980</span>
+                        <span class="text-gray-500 text-xs">/月(税込)</span>
+                    </div>
+                    <ul class="text-sm space-y-3 text-gray-600">
+                        <li class="flex justify-between"><span>利用時間</span><span class="font-bold">全日 23:00-5:00</span></li>
+                        <li class="flex justify-between"><span>利用回数</span><span class="font-bold">制限なし</span></li>
+                        <li class="flex justify-between"><span>同時予約</span><span class="font-bold">1枠</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Note -->
+            <div class="mt-12 bg-green-50 rounded-xl p-6 text-center border border-green-100">
+                <p class="text-green-800 font-bold mb-2 underline decoration-green-300">入会金 0円 ＋ 初月月会費 50%OFF キャンペーン実施中！</p>
+                <p class="text-sm text-gray-600">※会員数が定員の60名に達し次第、募集を一時停止させていただきます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facility & Concept -->
+    <section id="facility" class="py-20 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="bg-green-700 absolute -top-4 -left-4 w-24 h-24 rounded-full opacity-10"></div>
+                    <img src="https://images.unsplash.com/photo-1592910129841-35697666276b?auto=format&fit=crop&q=80&w=800" alt="シミュレーター打席" class="rounded-2xl shadow-2xl relative z-10">
+                    <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-green-100 rounded-full -z-10"></div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">少人数限定。だから「予約が取れる」</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        多くのインドアゴルフ場では、会員数が多すぎて「予約が取れない」という不満が多く聞かれます。<br><br>
+                        当スタジオは会員数を<strong>最大60名</strong>に限定。これにより、メインプランの会員様でも高い予約充足率を維持し、練習したい時にしっかり練習できる環境を実現しました。
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-lg mr-4"><i class="fas fa-door-closed text-green-700"></i></div>
+                            <div>
+                                <h4 class="font-bold">完全個室プライベート空間</h4>
+                                <p class="text-sm text-gray-500">周りの視線を気にせず、自分のペースで練習に没頭できます。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-lg mr-4"><i class="fas fa-video text-green-700"></i></div>
+                            <div>
+                                <h4 class="font-bold">最新スイング解析AI搭載</h4>
+                                <p class="text-sm text-gray-500">秒間1,000フレームの高速カメラで、わずかなミスの原因を可視化。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-24 md:pb-16">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12">
+            <div>
+                <span class="text-2xl font-bold text-green-400 tracking-tighter">GOLF STUDIO</span>
+                <p class="mt-4 text-gray-400 text-sm">
+                    〒123-4567 東京都〇〇区△△ 1-2-3<br>
+                    東急東横線「〇〇駅」徒歩3分<br>
+                    24時間営業 / 年中無休
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 border-l-4 border-green-600 pl-3">プラン一覧</h4>
+                <ul class="text-gray-400 text-sm space-y-3">
+                    <li><a href="#pricing" class="hover:text-white transition">オールタイム（推奨）</a></li>
+                    <li><a href="#pricing" class="hover:text-white transition">オールタイムゴールド</a></li>
+                    <li><a href="#pricing" class="hover:text-white transition">ライトプラン</a></li>
+                    <li><a href="#pricing" class="hover:text-white transition">平日デイタイム</a></li>
+                    <li><a href="#pricing" class="hover:text-white transition">ナイトタイム</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 border-l-4 border-green-600 pl-3">お問い合わせ</h4>
+                <p class="text-gray-400 text-sm mb-4 font-bold">公式LINEより24時間受付中</p>
+                <a href="#" class="inline-block bg-[#06C755] text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition">
+                    <i class="fab fa-line mr-2 text-xl"></i>LINEで質問・予約
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500 text-xs">
+            &copy; 2024 GOLF STUDIO.
+        </div>
+    </footer>
+
+    <!-- Sticky CTA (Mobile Only) -->
+    <div class="sticky-cta md:hidden grid grid-cols-2">
+        <a href="#" class="bg-white text-green-700 py-4 text-center font-bold border-t border-gray-100">
+            <i class="far fa-question-circle mr-1"></i>LINE相談
+        </a>
+        <a href="#" class="bg-green-700 text-white py-4 text-center font-bold">
+            <i class="far fa-calendar-alt mr-1"></i>体験予約
+        </a>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                mobileMenu.classList.add('hidden');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
